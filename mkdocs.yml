@@ -1,0 +1,106 @@
+site_name: Camelot
+repo_url: https://github.com/nmstoker/camelot
+edit_uri: edit/main/docs/
+
+nav:
+  - Home: 'index.md'
+  - 'User Guide':
+    - 'Introduction': 'user_guide/intro.md'
+    - 'Installing Dependencies': 'user_guide/install-deps.md'
+    - 'Installing Camelot': 'user_guide/install.md'
+    - 'How it works': 'user_guide/how-it-works.md'
+    - 'Quick Start': 'user_guide/quickstart.md'
+    - 'Advanced Usage': 'user_guide/advanced.md'
+    - 'FAQ': 'user_guide/faq.md'
+    - 'CLI': 'user_guide/cli.md'
+  - 'API Reference': 'api.md'
+  - 'Contributor Guide': 'developers/contributing.md'
+
+theme:
+  name: material
+  icon:
+    repo: fontawesome/brands/github
+  favicon: img/camelot-logo.png
+  logo: img/camelot-logo.png
+  features:
+  - content.action.edit
+  - content.action.view
+  - content.code.copy
+  - content.tabs.link
+  - header.autohide
+  - navigation.footer
+  - navigation.instant
+  - navigation.tabs
+  - navigation.top
+  - navigation.tracking
+  - toc.follow
+  - toc.integrate
+  palette: 
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: blue
+      toggle:
+        icon: material/weather-night 
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: custom
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.caret
+  - pymdownx.tilde
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
+  - pymdownx.keys
+  - pymdownx.smartsymbols
+  - abbr
+  - attr_list
+  - md_in_html
+  - pymdownx.snippets:
+      auto_append: ["includes/abbreviations.md"]
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - toc:
+      permalink: true
+watch:
+  - includes
+
+extra_css:
+  - css/extra.css
+  - css/asciinema-player.css
+
+extra_javascript:
+  - js/asciinema-player.min.js
+  - js/tablesort.min.js
+  - js/tablesort.js
+
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          options:
+            heading_level: 3
+            docstring_style: numpy
+            show_signature: true
+            separate_signature: true
+            line_length: 60
+            show_root_full_path: true
+            show_root_members_full_path: true
+            show_root_heading: true
+
+  - table-reader:
+      data_path: "docs/csv"
