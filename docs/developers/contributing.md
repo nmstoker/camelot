@@ -106,10 +106,12 @@ $ python setup.py test
 
 Writing documentation, function docstrings, examples and tutorials is a great way to start contributing to open-source software! The documentation is present inside the `docs/` directory of the source code repository.
 
-The documentation is written in [reStructuredText](https://en.wikipedia.org/wiki/ReStructuredText), with [Sphinx](http://www.sphinx-doc.org/en/master/) used to generate these lovely HTML files that you're currently reading (unless you're reading this on GitHub). You can edit the documentation using any text editor and then generate the HTML output by running `make html` in the ``docs/`` directory.
+The documentation is written in [markdown](https://en.wikipedia.org/wiki/Markdown), with [Material for Mkdocs](https://squidfunk.github.io/mkdocs-material/) used to generate these lovely HTML files that you're currently reading (unless you're reading this on GitHub). You can edit the documentation using any text editor and then generate the HTML output by running `mkdocs serve` or `mkdocs build` in the ``docs/`` directory. GitHub Actions trigger an update of the online documentation automatically.
 
-The function docstrings are written using the [numpydoc](https://numpydoc.readthedocs.io/en/latest/format.html) extension for Sphinx. Make sure you check out how its format guidelines before you start writing one.
+The function docstrings are written using the [mkdocstrings](https://mkdocstrings.github.io/) extension for Material for Mkdocs. Make sure you check out its format guidelines before you start writing docstrings.
 
+!!! note
+    Installation steps for `Material for Mkdocs` to be added shortly.
 
 ## Filing Issues
 
