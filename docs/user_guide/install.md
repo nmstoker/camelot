@@ -12,11 +12,41 @@ After [installing the dependencies](install-deps.md), which include [Ghostscript
 
 ## pip
 
-To install Camelot from PyPI using ``pip``, please include the extra ``cv`` requirement as shown::
+??? tip "Tip: Use a virtual environment"
+
+    === "Windows"
+
+    <link rel="stylesheet" type="text/css" href="../../css/asciinema-player.css" />
+    <div id="player"></div>
+      <script src="../../js/asciinema-player.min.js"></script>
+      <script>
+        AsciinemaPlayer.create(
+          '../../casts/python3.12_create_venv.cast',
+          document.getElementById('player'),
+          { poster: "npt:0:1" }
+        );
+      </script>
+
+To install Camelot from PyPI using ``pip``, installing without the "[base]" option as recommended elsewhere then manually adding opencv-python and ghostscript (**note**: this refers to the Python package, not the application which should have been installed along with the other dependencies):
 
 ``` bash
-$ pip install "camelot-py[base]"
+$ pip install camelot-py
+$ pip install opencv-python
+$ pip install ghostscript
 ```
+
+=== "Windows"
+
+    <link rel="stylesheet" type="text/css" href="../../css/asciinema-player.css" />
+    <div id="player2"></div>
+      <script src="../../js/asciinema-player.min.js"></script>
+      <script>
+        AsciinemaPlayer.create(
+          '../../casts/windows11_pip_install_camelot-py.cast',
+          document.getElementById('player2'),
+          { poster: "npt:0:1" }
+        );
+      </script>
 
 ## conda
 
